@@ -2,8 +2,9 @@ name: Auto Update Movie Config
 
 on:
   schedule:
-    # Runs at the top of every 3rd hour
+    # Runs at minute 0 past every 3rd hour (e.g., 00:00, 03:00, 06:00, etc.)
     - cron: '0 */3 * * *'
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -16,7 +17,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: main # Keep on main to execute the script
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,4 +33,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: .
+          # Excludes backend scripts and github folders from the public gh-pages branch
           exclude_assets: '.github,update.js,package.json,package-lock.json'
