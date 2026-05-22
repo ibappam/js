@@ -2,7 +2,8 @@ name: Auto Update Movie Config
 
 on:
   schedule:
-    - cron: '0 */3 * * *' # Every 3 hours
+    # Runs at the top of every 3rd hour
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -31,4 +32,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: .
-          exclude_assets: '.github,update.js'
+          exclude_assets: '.github,update.js,package.json,package-lock.json'
