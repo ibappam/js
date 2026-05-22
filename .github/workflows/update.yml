@@ -2,7 +2,7 @@ name: Auto Update Movie Config
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 */3 * * *' # Every 3 hours
   workflow_dispatch:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          ref: main # We stay on main to run the script
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,5 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: .
-          # This hides your secret files from the public website branch
-          exclude_assets: '.github,update.js' 
+          exclude_assets: '.github,update.js'
