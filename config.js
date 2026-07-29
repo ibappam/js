@@ -1,5 +1,5 @@
 var movieData = {
   "d": "https://gemma416okl.com",
   "r": "https://www.5movierulz.vote/",
-  "t": "2026-07-28T22:05:47.864Z"
+  "t": "2026-07-29T02:31:11.994Z"
 };
