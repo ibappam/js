@@ -1,5 +1,5 @@
 var movieData = {
   "d": "https://slast430did.com",
-  "r": "https://www.5movierulz.watch/",
-  "t": "2026-08-24T15:37:01.532Z"
+  "r": "https://www.5movierulz.plumbing/",
+  "t": "2026-08-24T18:37:15.261Z"
 };
